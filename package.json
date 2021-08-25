@@ -1,0 +1,59 @@
+{
+    "name": "opc-factory-ui",
+    "productName": "OPC Factory Control Panel",
+    "version": "4.9.1",
+    "description": "The sender and device-end program for the OPC Factory",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "pack": "build --dir",
+        "dist": "build",
+        "postinstall": "electron-builder install-app-deps"
+    },
+    "build": {
+        "appId": "com.electron.bpi_ws1819.opc_factory",
+        "directories": {
+            "buildResources": "resources",
+            "output": "_build"
+        },
+        "win": {
+            "target": [
+                "portable"
+            ],
+            "icon": "build/icon.ico"
+        },
+        "nsis": {
+            "oneClick": false,
+            "perMachine": false,
+            "allowToChangeInstallationDirectory": true
+        }
+    },
+    "keywords": [
+        "Electron",
+        "OPC",
+        "OPC-UA",
+        "Server",
+        "Factory"
+    ],
+    "repository": "none",
+    "author": "Robin Garbe",
+    "license": "ISC",
+    "dependencies": {
+        "appdata-path": "^1.0.0",
+        "axios": "^0.18.0",
+        "custom-event": "^1.0.1",
+        "electron-reload": "^1.4.0",
+        "n-readlines": "^1.0.0",
+        "node-opcua": "^0.5.8",
+        "node-opcua-crypto": "^1.0.1",
+        "node-opcua-isa95": "0.0.4",
+        "public-ip": "^3.0.0",
+        "serialport": "^7.1.4",
+        "string-hash": "^1.1.3"
+    },
+    "devDependencies": {
+        "electron": "^4.0.5",
+        "electron-builder": "^20.38.5"
+    }
+}

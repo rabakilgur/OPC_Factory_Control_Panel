@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>_</title>
+    <script> const remote = require('electron').remote; </script>
+    <script> if (typeof module === 'object') { window.module = module; module = undefined; } </script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/vue.js"></script> -->
+    <!-- <script src="js/vuex.js"></script> -->
+    <script src="js/activity_indicator.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/dark_bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="css/ionicons.min.css"> -->
+    <link rel="stylesheet" href="css/font_Voces.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<div class="preloader">
+	<div class="preloader-cogs">
+		<div class="fa fa-cog preloader-cogs-one"></div>
+		<div class="fa fa-cog preloader-cogs-three"></div>
+		<div class="fa fa-cog preloader-cogs-big"></div>
+	</div>
+</div>
+<header id="titlebar">
+    <div id="titlebar-drag-region">
+        <div id="titlebar-window-controls">
+            <div class="titlebar-button" id="titlebar-option-button">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512">
+                    <path d="M413.97,276.67c1.06-6.23,1.06-13.52,1.06-20.8s-1.06-13.52-1.06-20.8l44.67-34.32c4.26-3.12,5.32-8.32,2.13-13.52 l-42.55-71.76c-2.13-4.16-8.51-6.24-12.77-4.16l-53.19,20.8c-10.64-8.32-23.39-15.6-36.16-20.8l-7.45-55.12 c-1.06-4.15-5.32-8.32-10.64-8.32h-85.1c-5.32,0-9.58,4.16-10.64,8.32l-8.51,55.12c-12.77,5.2-24.46,12.48-36.17,20.8l-53.19-20.8 c-5.32-2.07-10.64,0-12.77,4.16L49.1,187.23c-2.12,4.15-1.06,10.4,2.13,13.52l45.74,34.32c0,7.28-1.06,13.52-1.06,20.8 c0,7.28,1.06,13.52,1.06,20.8L52.3,310.98c-4.26,3.12-5.32,8.32-2.13,13.52l42.55,71.76c2.13,4.16,8.51,6.23,12.77,4.16l53.19-20.8 c10.64,8.32,23.39,15.6,36.16,20.8l8.51,55.12c1.07,5.2,5.32,8.32,10.64,8.32h85.1c5.32,0,9.58-4.16,10.64-8.32l8.52-55.12 c12.76-5.2,24.46-12.48,36.16-20.8l53.19,20.8c5.32,2.07,10.64,0,12.77-4.16l42.55-71.76c2.13-4.15,1.06-10.4-2.13-13.52 L413.97,276.67L413.97,276.67z M255.47,328.67c-41.49,0-74.46-32.23-74.46-72.8s32.97-72.8,74.46-72.8s74.46,32.24,74.46,72.8 S296.96,328.67,255.47,328.67z"/>
+                </svg>
+            </div>
+            <div class="titlebar-button" id="titlebar-min-button">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512">
+                    <path d="M416,288H96c-17.67,0-32-14.33-32-32v0c0-17.67,14.33-32,32-32h320c17.67,0,32,14.33,32,32v0C448,273.67,433.67,288,416,288 z"/>
+                </svg>
+            </div>
+            <div class="titlebar-button" id="titlebar-max-button">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512">
+                    <path d="M405.25,63.95h-298.6c-23.5,0-42.7,19.2-42.7,42.7v298.7c0,23.5,19.2,42.7,42.7,42.7h298.7c23.5,0,42.7-19.2,42.7-42.7 v-298.7C447.95,83.15,428.75,63.95,405.25,63.95z M384,384H128V128h256V384z"/>
+                </svg>
+            </div>
+            <div class="titlebar-button" id="titlebar-restore-button">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512">
+                    <path d="M414.62,63.95H181.4c-18.35,0-33.35,15-33.35,33.35v50.75H97.3c-18.35,0-33.35,15-33.35,33.35v233.3 c0,18.35,15,33.35,33.35,33.35h233.3c18.35,0,33.35-15,33.35-33.35v-50.75h50.75c18.35,0,33.35-15,33.35-33.35V97.3 C447.97,78.95,432.98,63.95,414.62,63.95z M299.95,384.05h-172v-172h172V384.05z M384.05,299.95h-20.1V181.4 c-0.08-18.35-15.07-33.35-33.43-33.35H212.05v-20.1h172V299.95z"/>
+                </svg>
+            </div>
+            <div class="titlebar-button" id="titlebar-close-button">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512">
+                    <path d="M435.15,389.89L301.12,255.87l133.89-133.89c12.5-12.5,12.5-32.76,0-45.25l0,0c-12.5-12.5-32.76-12.5-45.25,0L255.87,210.61 L122.11,76.85c-12.5-12.5-32.76-12.5-45.25,0l0,0c-12.5,12.5-12.5,32.76,0,45.25l133.76,133.76L76.72,389.76 c-12.5,12.5-12.5,32.76,0,45.25l0,0c12.5,12.5,32.76,12.5,45.25,0l133.89-133.89l134.02,134.02c12.5,12.5,32.76,12.5,45.25,0l0,0 C447.64,422.65,447.64,402.39,435.15,389.89z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="app-title" class="p-3">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+    	<path fill="#242222" stroke="#FFFFFF" stroke-width="25" stroke-miterlimit="10" d="M452.14,440.5H59.86 C40.61,440.5,25,424.89,25,405.64V106.36C25,87.11,40.61,71.5,59.86,71.5h392.27c19.25,0,34.86,15.61,34.86,34.86v299.27 C487,424.89,471.39,440.5,452.14,440.5z"/>
+		<path fill="#FFFFFF" d="M69,406L69,406c-4.14,0-7.5-3.36-7.5-7.5v-15c0-4.14,3.36-7.5,7.5-7.5h0c4.14,0,7.5,3.36,7.5,7.5v15 C76.5,402.64,73.14,406,69,406z"/>
+		<path fill="#CCCCCC" d="M106.5,402.25L106.5,402.25c-4.14,0-7.5-3.36-7.5-7.5v-7.5c0-4.14,3.36-7.5,7.5-7.5h0 c4.14,0,7.5,3.36,7.5,7.5v7.5C114,398.89,110.64,402.25,106.5,402.25z"/>
+		<path fill="#FFFFFF" d="M144,406L144,406c-4.14,0-7.5-3.36-7.5-7.5v-15c0-4.14,3.36-7.5,7.5-7.5l0,0c4.14,0,7.5,3.36,7.5,7.5v15 C151.5,402.64,148.14,406,144,406z"/>
+		<path fill="#CCCCCC" d="M181.5,402.25L181.5,402.25c-4.14,0-7.5-3.36-7.5-7.5v-7.5c0-4.14,3.36-7.5,7.5-7.5l0,0 c4.14,0,7.5,3.36,7.5,7.5v7.5C189,398.89,185.64,402.25,181.5,402.25z"/>
+		<path fill="#FFFFFF" d="M219,406L219,406c-4.14,0-7.5-3.36-7.5-7.5v-15c0-4.14,3.36-7.5,7.5-7.5l0,0c4.14,0,7.5,3.36,7.5,7.5v15 C226.5,402.64,223.14,406,219,406z"/>
+		<path fill="#CCCCCC" d="M256.5,402.25L256.5,402.25c-4.14,0-7.5-3.36-7.5-7.5v-7.5c0-4.14,3.36-7.5,7.5-7.5l0,0 c4.14,0,7.5,3.36,7.5,7.5v7.5C264,398.89,260.64,402.25,256.5,402.25z"/>
+		<path fill="#FFFFFF" d="M294,406L294,406c-4.14,0-7.5-3.36-7.5-7.5v-15c0-4.14,3.36-7.5,7.5-7.5l0,0c4.14,0,7.5,3.36,7.5,7.5v15 C301.5,402.64,298.14,406,294,406z"/>
+		<path fill="#CCCCCC" d="M331.5,402.25L331.5,402.25c-4.14,0-7.5-3.36-7.5-7.5v-7.5c0-4.14,3.36-7.5,7.5-7.5l0,0 c4.14,0,7.5,3.36,7.5,7.5v7.5C339,398.89,335.64,402.25,331.5,402.25z"/>
+		<path fill="#FFFFFF" d="M369,406L369,406c-4.14,0-7.5-3.36-7.5-7.5v-15c0-4.14,3.36-7.5,7.5-7.5l0,0c4.14,0,7.5,3.36,7.5,7.5v15 C376.5,402.64,373.14,406,369,406z"/>
+		<path fill="#CCCCCC" d="M406.5,402.25L406.5,402.25c-4.14,0-7.5-3.36-7.5-7.5v-7.5c0-4.14,3.36-7.5,7.5-7.5l0,0 c4.14,0,7.5,3.36,7.5,7.5v7.5C414,398.89,410.64,402.25,406.5,402.25z"/>
+		<path fill="#FFFFFF" d="M444,406L444,406c-4.14,0-7.5-3.36-7.5-7.5v-15c0-4.14,3.36-7.5,7.5-7.5l0,0c4.14,0,7.5,3.36,7.5,7.5v15 C451.5,402.64,448.14,406,444,406z"/>
+		<path fill="#AAAAAA" d="M279,227L279,227c-4.14,0-7.5-3.36-7.5-7.5v-91c0-4.14,3.36-7.5,7.5-7.5l0,0c4.14,0,7.5,3.36,7.5,7.5v91 C286.5,223.64,283.14,227,279,227z"/>
+		<path fill="#AAAAAA" d="M354,166L354,166c-4.14,0-7.5-3.36-7.5-7.5v-30c0-4.14,3.36-7.5,7.5-7.5l0,0c4.14,0,7.5,3.36,7.5,7.5v30 C361.5,162.64,358.14,166,354,166z"/>
+		<path fill="#AAAAAA" d="M429,241L429,241c-4.14,0-7.5-3.36-7.5-7.5v-105c0-4.14,3.36-7.5,7.5-7.5l0,0c4.14,0,7.5,3.36,7.5,7.5v105 C436.5,237.64,433.14,241,429,241z"/>
+		<path fill="#FFFFFF" d="M279,347L279,347c-4.14,0-7.5-3.36-7.5-7.5v-43c0-4.14,3.36-7.5,7.5-7.5l0,0c4.14,0,7.5,3.36,7.5,7.5v43 C286.5,343.64,283.14,347,279,347z"/>
+		<path fill="#FFFFFF" d="M354,347L354,347c-4.14,0-7.5-3.36-7.5-7.5v-103c0-4.14,3.36-7.5,7.5-7.5l0,0c4.14,0,7.5,3.36,7.5,7.5v103 C361.5,343.64,358.14,347,354,347z"/>
+		<path fill="#FFFFFF" d="M429,347L429,347c-4.14,0-7.5-3.36-7.5-7.5v-28c0-4.14,3.36-7.5,7.5-7.5l0,0c4.14,0,7.5,3.36,7.5,7.5v28 C436.5,343.64,433.14,347,429,347z"/>
+		<path fill="#51A84C" stroke="#FFFFFF" stroke-width="16" stroke-miterlimit="10" d="M280,293h-2c-11.32,0-20.5-9.18-20.5-20.5v-2 c0-11.32,9.18-20.5,20.5-20.5h2c11.32,0,20.5,9.18,20.5,20.5v2C300.5,283.82,291.32,293,280,293z"/>
+		<path fill="#E6AA40" stroke="#FFFFFF" stroke-width="16" stroke-miterlimit="10" d="M355,232.5h-2c-11.32,0-20.5-9.18-20.5-20.5 v-2c0-11.32,9.18-20.5,20.5-20.5h2c11.32,0,20.5,9.18,20.5,20.5v2C375.5,223.32,366.32,232.5,355,232.5z"/>
+		<path fill="#C04D4A" stroke="#FFFFFF" stroke-width="16" stroke-miterlimit="10" d="M430,307.5h-2c-11.32,0-20.5-9.18-20.5-20.5 v-2c0-11.32,9.18-20.5,20.5-20.5h2c11.32,0,20.5,9.18,20.5,20.5v2C450.5,298.32,441.32,307.5,430,307.5z"/>
+		<path fill="#464444" d="M144.5,127.5L144.5,127.5c-41.42,0-75,33.58-75,75v0c0,8.28,6.72,15,15,15h120c8.28,0,15-6.72,15-15v0 C219.5,161.08,185.92,127.5,144.5,127.5z"/>
+		<path fill="#AAAAAA" d="M136.99,219.84L136.99,219.84c-3.5-2.22-4.54-6.85-2.32-10.35l25.83-40.75c2.22-3.5,6.85-4.54,10.35-2.32 l0,0c3.5,2.22,4.54,6.85,2.32,10.35l-25.83,40.75C145.12,221.02,140.48,222.06,136.99,219.84z"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" d="M144.5,127.5L144.5,127.5 c-41.42,0-75,33.58-75,75v0c0,8.28,6.72,15,15,15h120c8.28,0,15-6.72,15-15v0C219.5,161.08,185.92,127.5,144.5,127.5z"/>
+		<path fill="#FFFFFF" d="M111.36,250.53c-1.9-1.87-4.31-2.81-7.17-2.81H76.6c-2.87,0-5.28,0.95-7.16,2.83 c-1.88,1.88-2.83,4.29-2.83,7.16v84.59c0,2.88,0.95,5.28,2.83,7.16c1.88,1.88,4.29,2.83,7.16,2.83h27.59 c2.86,0,5.28-0.95,7.17-2.81c1.91-1.88,2.88-4.29,2.88-7.18V257.7C114.24,254.82,113.27,252.41,111.36,250.53z M99.49,261.46 v77.08H81.36v-77.08H99.49z"/>
+		<path fill="#FFFFFF" d="M166.16,250.52c-1.9-1.87-4.31-2.81-7.17-2.81h-35v97.2c0,4.07,3.31,7.38,7.38,7.38 c4.07,0,7.38-3.31,7.38-7.38v-31.74h20.24c2.87,0,5.29-0.96,7.19-2.86c1.9-1.9,2.86-4.32,2.86-7.19V257.7 C169.04,254.86,168.05,252.38,166.16,250.52z M154.29,261.46v37.9h-15.54v-37.9H154.29z"/>
+		<path fill="#FFFFFF" d="M214.98,283.63c4.09,0,7.41-3.32,7.41-7.41V257.7c0-2.85-1.01-5.34-2.93-7.19 c-1.92-1.86-4.34-2.8-7.19-2.8h-25.38c-2.87,0-5.28,0.95-7.16,2.83c-1.88,1.88-2.83,4.29-2.83,7.16v84.59 c0,2.88,0.95,5.28,2.83,7.16c1.88,1.88,4.29,2.83,7.16,2.83h25.38c2.85,0,5.27-0.94,7.19-2.8c1.92-1.86,2.93-4.34,2.93-7.19v-20.6 c0-4.08-3.32-7.41-7.41-7.41s-7.41,3.32-7.41,7.41v16.84h-15.92v-77.08h15.92v14.76C207.57,280.31,210.9,283.63,214.98,283.63z"/>
+    </svg>
+
+
+    <h4>
+        <span class="app-title"></span>
+        <div class="small text-muted app-subtitle">
+            <span class="app-type"></span>
+            <span class="app-version"></span>
+            <span class="app-status"></span>
+        </div>
+    </h4>
+    <div class="dragarea"></div>
+</div>
+
+<div class="content p-3"></div>
+
+<div id="popup-box">
+    <div id="popup-background"></div>
+
+    <div class="popup p-4" id="popup-addDevice">
+        <h3>Add Device</h3>
+        <table class="deviceSettings-infobox">
+            <tr><td>Name: </td><td><input type="text" class="form-control" id="addDevice-name" placeholder="Any name" value="" /></td></tr>
+            <tr><td>Type: </td><td><input type="text" class="form-control" id="addDevice-type" placeholder="e.g.: snapmaker, plc" value="" /></td></tr>
+        </table>
+        <div class="popup-buttons">
+            <button type="submit" class="btn btn-success btn-close btn_add btn_save btn_restart">Add and Restart</button>
+            <button type="submit" class="btn btn-success btn-close btn_add btn_save">Add</button>
+            <button type="submit" class="btn btn-secondary btn-close">Close</button>
+        </div>
+    </div>
+
+    <div class="popup p-4" id="popup-deviceSettings">
+        <h3>Device Settings</h3>
+        <span class="settings-sectionHeader" data-sectionTitle="Device Information"></span>
+        <table class="deviceSettings-infobox">
+            <tr><td>Name: </td><td class="deviceSettings-info-name"></td></tr>
+            <tr><td>ID: </td><td class="deviceSettings-info-id"></td></tr>
+            <tr><td>Type: </td><td class="deviceSettings-info-type"></td></tr>
+        </table>
+
+        <button type="submit" class="btn btn-primary btn-close btn-removeDevice">Remove Device</button>
+
+        <span class="settings-sectionHeader" data-sectionTitle="Orders"></span>
+        <button class="btn btn-secondary btn_openDeviceOrderDir" data-deviceDir="">Open Order Folder</button>
+        <div class="deviceSettings-ordersTitle">Possible Orders for this Device: <span>?</span></div>
+        <span class="settings-sectionHeader" data-sectionTitle="Device Type Specific Settings"></span>
+        <div class="deviceSettings-typeSpecific"></div>
+        <div class="popup-buttons">
+            <button type="submit" class="btn btn-success btn_save btn_restart">Save and Restart</button>
+            <button type="submit" class="btn btn-success btn_save">Save</button>
+            <button type="submit" class="btn btn-secondary btn-close">Close</button>
+        </div>
+    </div>
+
+    <div class="popup p-4" id="popup-options">
+        <h3>Settings</h3>
+        <span class="settings-sectionHeader" data-sectionTitle="General Settings"></span>
+        <div class="settings-dev">
+            <button class="btn btn-primary btn_reload">Reload</button>
+            <button class="btn btn-primary btn_restart">Full Restart</button>
+            <button class="btn btn-secondary btn_openAppFolder">Open App Folder</button>
+        </div>
+        <div style="margin-top: 16px;">
+            <div class="switch">
+            	<input id="switch_devMode" type="checkbox" hidden="hidden"/>
+            	<label for="switch_devMode"></label>
+            	<span>Development Mode</span>
+            </div>
+            <div class="switch">
+            	<input id="switch_senderMode" type="checkbox" hidden="hidden"/>
+            	<label for="switch_senderMode"></label>
+            	<span>Device-End Mode</span><span> / </span><span>Sender Mode</span>
+            </div>
+            <div class="switch">
+            	<input id="switch_startSender" type="checkbox" hidden="hidden"/>
+            	<label for="switch_startSender"></label>
+            	<span>Start additional Sender</span>
+            </div>
+        </div>
+        <span class="settings-inputTitle">Data Server Address:</span>
+        <input type="text" class="form-control" id="settings-dataServer-address" placeholder="" value="" />
+        <span class="settings-inputTitle">Log Server Address:</span>
+        <input type="text" class="form-control" id="settings-logServer-address" placeholder="" value="" />
+
+        <span class="settings-section-sender">
+            <span class="settings-sectionHeader" data-sectionTitle="Sender Settings"></span>
+            <div class="switch">
+                <input id="switch_fixedConnection" type="checkbox" hidden="hidden"/>
+                <label for="switch_fixedConnection"></label>
+                <span>Use fixed connection settings:</span>
+            </div>
+            <div class="settings-fixedConnection">
+                <div class="radio_box">
+                    <label class="settings-radioLabel" for="settings-sender-radio1">
+                        <input id="settings-sender-radio1" type="radio" name="settings-sender-radio"/>
+                        <span class="radio-outer"><span class="radio-inner"></span></span>
+                        <span>This PC</span>
+                    </label>
+                    <label class="settings-radioLabel" for="settings-sender-radio2">
+                        <input id="settings-sender-radio2" type="radio" name="settings-sender-radio"/>
+                        <span class="radio-outer"><span class="radio-inner"></span></span>
+                        <span>Local Network</span>
+                    </label>
+                    <label class="settings-radioLabel" for="settings-sender-radio3">
+                        <input id="settings-sender-radio3" type="radio" name="settings-sender-radio"/>
+                        <span class="radio-outer"><span class="radio-inner"></span></span>
+                        <span>Internet</span>
+                    </label>
+                </div>
+                <div class="settings-addressBox" data-showAdress="1">
+                    <span id="settings-addressThisPC"></span>
+                    <input type="text" class="form-control" id="settings-addressLocal" placeholder="Local Adress" value="" />
+                    <input type="text" class="form-control" id="settings-addressInternet" placeholder="Internet Adress" value="" />
+                </div>
+            </div>
+        </span>
+
+        <span class="settings-section-DeviceEnd">
+            <span class="settings-sectionHeader" data-sectionTitle="Device-End Settings"></span>
+            <table class="deviceSettings-infobox">
+                <tr><td>Hub Server Name:</td><td><input type="text" class="form-control" id="settings-server-name" placeholder="Any Name" value="" /></td></tr>
+                <tr><td>Port:</td><td><input type="text" class="form-control" id="settings-server-port" placeholder="4334" value="" /></td></tr>
+                <tr><td>Endpoint:</td><td><input type="text" class="form-control" id="settings-server-endpoint" placeholder="OPC-UA" value="" /></td></tr>
+            </table>
+        </span>
+
+        <div class="popup-buttons">
+            <button type="submit" class="btn btn-success btn_save btn_restart">Save and Restart</button>
+            <button type="submit" class="btn btn-success btn_save">Save</button>
+            <button type="submit" class="btn btn-secondary btn-close">Close</button>
+        </div>
+    </div>
+
+    <div class="popup p-4" id="popup-importSettings">
+        <h3>Import Settings</h3>
+        <div class="importSettings-box" data-status="init">
+            <span>Drop <i>settings.json</i><br>here to import it</span>
+            <span>Dropped <i>settings.json</i>.<br>Import it?</span>
+            <span>The file you dropped<br>wasn't a <i>settings.json</i></span>
+        </div>
+        <div class="popup-buttons">
+            <button type="submit" class="btn btn-success btn_save btn_restart">Import and Restart</button>
+            <button type="submit" class="btn btn-success btn_save">Import</button>
+            <button type="submit" class="btn btn-secondary btn-close">Close</button>
+        </div>
+    </div>
+</div> <!-- End of #popup-box -->
+
+<div id="error-layer">
+    <div id="error-list"></div>
+</div>
+
+
+</body>
+
+</html>

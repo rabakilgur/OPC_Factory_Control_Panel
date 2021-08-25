@@ -1,0 +1,69 @@
+Certificate Request:
+    Data:
+        Version: 0 (0x0)
+        Subject: C=FR, O=NodeOPCUA, CN=NodeOPCUA
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:cf:0e:56:b1:88:d7:e3:cc:85:0d:08:0a:c8:f2:
+                    e3:a9:ef:28:54:8b:ce:ad:f9:d1:4f:63:8a:af:13:
+                    37:12:0a:4d:43:13:ba:8f:2e:19:3b:c4:84:c6:48:
+                    55:38:e4:77:d1:71:52:84:1c:4f:71:73:34:52:c5:
+                    e0:6c:77:ce:69:85:57:84:7a:f1:d2:7f:65:03:b7:
+                    4e:a2:81:28:7d:20:52:cf:71:4c:bb:24:ad:21:eb:
+                    a6:85:f8:d9:bd:36:ba:af:22:ea:10:fe:41:9d:28:
+                    8b:04:01:41:e0:5b:58:db:59:61:d3:b5:91:68:ea:
+                    4d:a2:17:41:df:25:e1:38:40:81:75:6d:1a:b5:df:
+                    d1:4b:23:97:bd:e8:1b:66:2c:4f:d5:0b:28:3a:bf:
+                    af:df:7c:a1:9d:5e:b8:91:ab:53:a6:e1:d7:fe:1c:
+                    78:7a:ec:8f:15:86:e1:64:4d:e6:bb:52:8e:61:e4:
+                    94:45:44:ea:43:61:27:88:85:91:07:fd:82:ec:38:
+                    36:46:4e:93:82:8e:85:d3:1d:cd:33:16:02:d4:97:
+                    60:d9:dc:cb:b9:79:94:46:3b:8d:ff:4c:81:b6:03:
+                    34:f8:a5:bd:54:22:bf:6f:d6:f3:f0:6c:7f:9f:d3:
+                    61:63:03:22:6c:1b:31:62:ed:fc:a5:29:d6:bd:2d:
+                    ee:67
+                Exponent: 65537 (0x10001)
+        Attributes:
+        Requested Extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Key Usage: critical
+                Certificate Sign, CRL Sign
+            X509v3 Subject Alternative Name: 
+                URI:urn:DIK-ZBOX:Node-OPCUA-Server, DNS:DIK-ZBOX, IP Address:91.58.138.19
+    Signature Algorithm: sha256WithRSAEncryption
+         c1:95:14:f9:88:63:3d:08:46:b9:0a:d8:e1:91:5d:87:da:4a:
+         ef:a6:50:59:77:7e:f9:b4:89:9e:79:96:df:6d:99:f2:65:72:
+         98:56:30:86:6c:fa:8f:be:2a:9b:25:de:48:45:2f:53:51:0b:
+         de:12:a7:5a:09:84:c9:08:b6:58:0b:67:f7:88:8d:19:60:4b:
+         02:91:3f:cf:0f:bd:2e:8c:ff:57:80:6e:b4:9f:87:cd:f4:65:
+         57:8e:cf:87:9a:75:fa:3c:66:9e:bb:e6:19:2a:6d:37:f6:dc:
+         bd:f2:1f:40:85:a2:2d:ab:d9:a1:62:2e:2c:f2:f8:15:47:1a:
+         15:70:95:9b:59:41:da:23:ab:61:60:36:fa:8f:38:6c:f3:de:
+         4b:1d:3c:ce:0a:b5:15:26:c9:82:bb:12:1f:77:07:f3:42:76:
+         40:7f:65:cc:c0:aa:d7:d0:8a:29:ac:f1:60:62:35:56:56:64:
+         57:44:72:ea:b7:58:fe:4d:25:85:36:52:c9:3f:eb:e9:73:09:
+         1e:c6:33:d0:42:fb:ff:75:9c:b6:57:91:8f:53:62:c9:f9:94:
+         c3:9c:2b:dd:fd:da:3c:14:4a:52:63:d5:f3:c8:1b:da:6a:7b:
+         cf:53:7f:22:f2:81:0d:79:73:50:f2:79:3f:56:de:94:70:a8:
+         f8:45:d1:d8
+-----BEGIN CERTIFICATE REQUEST-----
+MIIC4TCCAckCAQAwNTELMAkGA1UEBhMCRlIxEjAQBgNVBAoMCU5vZGVPUENVQTES
+MBAGA1UEAwwJTm9kZU9QQ1VBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+AQEAzw5WsYjX48yFDQgKyPLjqe8oVIvOrfnRT2OKrxM3EgpNQxO6jy4ZO8SExkhV
+OOR30XFShBxPcXM0UsXgbHfOaYVXhHrx0n9lA7dOooEofSBSz3FMuyStIeumhfjZ
+vTa6ryLqEP5BnSiLBAFB4FtY21lh07WRaOpNohdB3yXhOECBdW0atd/RSyOXvegb
+ZixP1QsoOr+v33yhnV64katTpuHX/hx4euyPFYbhZE3mu1KOYeSURUTqQ2EniIWR
+B/2C7Dg2Rk6Tgo6F0x3NMxYC1Jdg2dzLuXmURjuN/0yBtgM0+KW9VCK/b9bz8Gx/
+n9NhYwMibBsxYu38pSnWvS3uZwIDAQABoGcwZQYJKoZIhvcNAQkOMVgwVjAJBgNV
+HRMEAjAAMA4GA1UdDwEB/wQEAwIBBjA5BgNVHREEMjAwhh51cm46RElLLVpCT1g6
+Tm9kZS1PUENVQS1TZXJ2ZXKCCERJSy1aQk9YhwRbOooTMA0GCSqGSIb3DQEBCwUA
+A4IBAQDBlRT5iGM9CEa5CtjhkV2H2krvplBZd375tImeeZbfbZnyZXKYVjCGbPqP
+viqbJd5IRS9TUQveEqdaCYTJCLZYC2f3iI0ZYEsCkT/PD70ujP9XgG60n4fN9GVX
+js+HmnX6PGaeu+YZKm039ty98h9AhaItq9mhYi4s8vgVRxoVcJWbWUHaI6thYDb6
+jzhs895LHTzOCrUVJsmCuxIfdwfzQnZAf2XMwKrX0IoprPFgYjVWVmRXRHLqt1j+
+TSWFNlLJP+vpcwkexjPQQvv/dZy2V5GPU2LJ+ZTDnCvd/do8FEpSY9XzyBvaanvP
+U38i8oENeXNQ8nk/Vt6UcKj4RdHY
+-----END CERTIFICATE REQUEST-----
